@@ -1,0 +1,116 @@
+anniechen ~/ISLG\ --> git clone https://github.com/gh-islg/git_workshop.git                                   Cloning into 'git_workshop'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 591 bytes | 197.00 KiB/s, done.
+anniechen ~/ISLG\ --> cd git_workshop
+anniechen ~/ISLG/git_workshop\ --> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+anniechen ~/ISLG/git_workshop\ --> touch my_file_ayc.txt
+anniechen ~/ISLG/git_workshop\ --> ls -l
+total 8
+-rw-r--r--  1 anniechen  staff  14 Dec 10 14:47 README.md
+-rw-r--r--  1 anniechen  staff   0 Dec 10 14:48 my_file_ayc.txt
+anniechen ~/ISLG/git_workshop\ --> echo "hello" > my_file_ayc.txt
+anniechen ~/ISLG/git_workshop\ --> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        my_file_ayc.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+anniechen ~/ISLG/git_workshop\ --> git add .
+anniechen ~/ISLG/git_workshop\ --> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   my_file_ayc.txt
+text file"
+[main 4cbbb60] creating atext file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 my_file_ayc.txt
+anniechen ~/ISLG/git_workshop\ --> 
+anniechen ~/ISLG/git_workshop\ --> 
+anniechen ~/ISLG/git_workshop\ --> 
+anniechen ~/ISLG/git_workshop\ --> git push 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/gh-islg/git_workshop.git
+   87a26f2..4cbbb60  main -> main
+anniechen ~/ISLG/git_workshop\ --> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   my_file_ayc.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+anniechen ~/ISLG/git_workshop\ --> git diff
+diff --git a/my_file_ayc.txt b/my_file_ayc.txt
+index ce01362..5c0a3ba 100644
+--- a/my_file_ayc.txt
++++ b/my_file_ayc.txt
+@@ -1 +1,3 @@
+ hello
++
++hey
+\ No newline at end of file
+anniechen ~/ISLG/git_workshop\ --> git log 
+commit 4cbbb60d86f912cb1f93aca9164ed4ee3a577efb (HEAD -> main, origin/main, origin/HEAD)
+Author: Annie Chen <aychen.555@gmail.com>
+Date:   Fri Dec 10 15:03:10 2021 -0500
+
+    creating atext file
+
+commit 87a26f2db84b378a5357bc700c4833651c979a05
+Author: Annie Y. Chen <aychen.555@gmail.com>
+Date:   Fri Dec 10 06:04:52 2021 -0500
+
+    Initial commit
+anniechen ~/ISLG/git_workshop\ --> git log --oneline 
+4cbbb60 (HEAD -> main, origin/main, origin/HEAD) creating atext file
+87a26f2 Initial commit
+anniechen ~/ISLG/git_workshop\ --> git reflog
+4cbbb60 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: creating atext file
+87a26f2 HEAD@{1}: clone: from https://github.com/gh-islg/git_workshop.git
+anniechen ~/ISLG/git_workshop\ --> git pull
+warning: Pulling without specifying how to reconcile divergent branches is
+discouraged. You can squelch this message by running one of the following
+commands sometime before your next pull:
+
+  git config pull.rebase false  # merge (the default strategy)
+  git config pull.rebase true   # rebase
+  git config pull.ff only       # fast-forward only
+
+You can replace "git config" with "git config --global" to set a default
+preference for all repositories. You can also pass --rebase, --no-rebase,
+or --ff-only on the command line to override the configured default per
+invocation.
+
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 10 (delta 3), reused 10 (delta 3), pack-reused 0
+Unpacking objects: 100% (10/10), 1.03 KiB | 81.00 KiB/s, done.
+From https://github.com/gh-islg/git_workshop
+   4cbbb60..1873ea0  main       -> origin/main
+Updating 4cbbb60..1873ea0
+Fast-forward
+ my_file_blh.txt | 1 +
+ my_file_oq.txt  | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 my_file_blh.txt
+ create mode 100644 my_file_oq.txt
